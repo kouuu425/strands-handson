@@ -13,7 +13,7 @@ def get_aws_updates(service_name: str) -> list:
 
     for entry in feed.entries:
         if service_name.lower() in entry.title.lower():
-            result append({
+            result.append({
                 "published": entry.get("published", "N/A"),
                 "summary": entry.get("summary", "")
             })
@@ -21,7 +21,7 @@ def get_aws_updates(service_name: str) -> list:
                 break
     return result
     
-agent Agent(
+agent = Agent(
     model="us.anthropic.claude-sonnet-4-5-20250929-v1:0",
     tools=[get_aws_updates]
 )
