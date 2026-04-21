@@ -2,7 +2,7 @@ import feedparser
 import asyncio
 import streamlit as st
 from strands import Agent, tool
-from dotenv impot load_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 
